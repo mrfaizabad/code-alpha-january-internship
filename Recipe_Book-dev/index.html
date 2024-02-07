@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Book Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Playfair+Display:wght@400;500;700&family=Poppins:wght@200;400&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a class="logo" href="#home">Recipe Book App</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#recipes">Recipes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#add-recipe">Add Recipe</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h1>Welcome to My Recipe Book</h1>
+      <p>Explore and organize your favourite recipes here.</p>
+      <form id="search-form">
+        <input
+          type="text"
+          placeholder="Search for recipes"
+          class="search-box"
+        />
+        <button type="submit" id="search-button">Search</button>
+      </form>
+    </section>
+  
+    <section id="recipes">
+      <h2>My Recipes</h2>
+      <ul id="recipes-list">
+    
+      </ul>
+    </section>
+
+    <div id="recipe-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="hideRecipeDetails()">&times;</span>
+        <h2>Recipe Details</h2>
+        <div id="recipe-details-content">
+          <!-- Display details of the selected recipe here -->
+        </div>
+        <div id="edit-delete-recipe">
+          <button id="edit-recipe-btn">Edit</button>
+          <button id="delete-recipe-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+  
+    <section id="add-recipe">
+      <h2>Add Recipe</h2>
+      <form id="recipe-form">
+        <label for="recipe-image">Recipe Image</label>
+        <input type="text" id="recipe-url" placeholder="Enter Image URL" required>
+  
+        <label for="recipe-name">Recipe Name</label>
+        <input type="text" id="recipe-name" placeholder="Enter Recipe Name" required>
+  
+        <label for="recipe-description">Recipe Description</label>
+        <textarea id="recipe-description" placeholder="Enter Description" required></textarea>
+  
+        <button type="submit" onclick="addRecipe(event)">Add Recipe</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
